@@ -1,0 +1,14 @@
+`timescale 1ns / 1ps
+
+
+module add16(sum,carry,A,B,Cin);
+            input [15:0] A,B;
+            input Cin;
+            output [15:0] sum;
+            output carry;
+            wire C0,C1,C2,C3;
+             c_add4 IN1(sum[3:0],C0,A[3:0],B[3:0],Cin), IN2(sum[7:4],C1,A[7:4],B[7:4],C0),
+       IN3(sum[11:8],C2,A[11:8],B[11:8],C1), IN4(sum[15:12],carry,A[15:12],B[15:12],C2);
+                       
+            
+endmodule
